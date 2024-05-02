@@ -50,7 +50,7 @@ SET default_table_access_method = heap;
 CREATE TABLE public.games (
     game_id integer NOT NULL,
     year integer NOT NULL,
-    round character varying(255) NOT NULL,
+    round character varying NOT NULL,
     winner_id integer NOT NULL,
     opponent_id integer NOT NULL,
     winner_goals integer NOT NULL,
@@ -88,7 +88,7 @@ ALTER SEQUENCE public.games_game_id_seq OWNED BY public.games.game_id;
 
 CREATE TABLE public.teams (
     team_id integer NOT NULL,
-    name character varying(255) NOT NULL
+    name character varying NOT NULL
 );
 
 
@@ -209,7 +209,7 @@ SELECT pg_catalog.setval('public.games_game_id_seq', 32, true);
 -- Name: teams_team_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.teams_team_id_seq', 88, true);
+SELECT pg_catalog.setval('public.teams_team_id_seq', 24, true);
 
 
 --
@@ -255,5 +255,4 @@ ALTER TABLE ONLY public.games
 --
 -- PostgreSQL database dump complete
 --
-
 
